@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Detail</title>
+</head>
+
+<body>
+    <header>
+        <h1>MOVIEMAGIC</h1>
+    </header>
+    <main>
+        <figure class="center">
+            <img src="https://image.tmdb.org/t/p/w500<%- detail.poster_path %>" alt="Poster">
+        </figure>
+        <h1>
+            <%- detail.title %>
+        </h1>
+        <div class="released">
+            <h3>
+                <%- detail.release_date %>
+            </h3>
+            <h3>
+                <%- detail.status %>
+            </h3>
+        </div>
+        <div class="genreDiv">
+            <%detail.genres.forEach((genre)=> { %>
+                <h5 class="genre">
+                    <%- genre.name %>
+                </h5>
+                <% }) %>
+        </div>
+        <h2>Plot Summary</h2>
+        <p>
+            <%- detail.overview %>
+        </p>
+
+    </main>
+    <footer>
+        <a href="/">Back to Main Page</a>
+    </footer>
+
+</body>
+
+</html>
